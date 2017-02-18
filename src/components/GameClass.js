@@ -5,6 +5,7 @@ class GameClass {
     this.player2 = 2;
     this.currentPlayer = 1;
     this.gameOver = false;
+    this.togglePlayer = this.togglePlayer;
   }
 
 
@@ -31,7 +32,16 @@ class GameClass {
         }
       }
     }
+    this.togglePlayer();
     return this.board;
+  }
+
+// change players
+  togglePlayer() {
+    if (this.currentPlayer == 1){
+      this.currentPlayer = 2;
+    }
+    else this.currentPlayer = 1;
   }
 
 // reset the board
@@ -45,5 +55,8 @@ class GameClass {
 let board = new GameClass();
 console.log(board.setPiece(2));
 console.log(board.setPiece(2));
-board.resetBoard();
-console.log(board.board);
+console.log(board.setPiece(3));
+console.log(board.setPiece(4));
+console.log(board.setPiece(5));
+console.log(board.setPiece(0));
+console.log(board);
