@@ -82,8 +82,39 @@ class GameClass {
     }
   }
 
+  checkDiagonalRight(){
+    for (let r = 3; r < 6; r++) {
+      for (let c = 0; c < 4; c++) {
+        if (this.board[r][c]){
+          if (this.board[r][c] === this.board[r - 1][c + 1] &&
+              this.board[r][c] === this.board[r - 2][c + 2] &&
+              this.board[r][c] === this.board[r - 3][c + 3])
+          {
+            return this.board;
+          }
+        }
+      }
+    }
+  }
+
+  checkDiagonalLeft(){
+    for (let r = 3; r < 6; r++) {
+      for (let c = 3; r < 7; c++) {
+        if (this.board[r][c]){
+          if (this.board[r][c] === this.board[r - 1][c - 1] &&
+              this.board[r][c] === this.board[r - 2][c - 2] &&
+              this.board[r][c] === this.board[r - 3][c - 3])
+          {
+            return this.board;
+          }
+        }
+      }
+    }
+  }
+
+
   checkAll(){
-    return this.checkHorizontal() || this.checkVertical();
+    return this.checkHorizontal() || this.checkVertical() || this.checkDiagonalRight() || this.checkDiagonalLeft();
   }
 }
 
@@ -91,15 +122,22 @@ class GameClass {
 
 let board = new GameClass();
 console.log(board.setPiece(0));
+console.log(board.setPiece(0));
+console.log(board.setPiece(0));
+console.log(board.setPiece(0));
+console.log(board.setPiece(1));
+console.log(board.setPiece(6));
 console.log(board.setPiece(1));
 console.log(board.setPiece(1));
 console.log(board.setPiece(2));
 console.log(board.setPiece(2));
+console.log(board.setPiece(6));
 console.log(board.setPiece(3));
-console.log(board.setPiece(2));
-console.log(board.setPiece(3));
-console.log(board.setPiece(3));
-console.log(board.setPiece(4));
-console.log("-------------")
+
+
+
+
+
+console.log("-------------");
 
 console.log(board.checkAll());
