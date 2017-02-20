@@ -67,6 +67,7 @@ class GameClass {
     }
   }
 
+// horizontal check
   checkHorizontal(){
     for (let r = 0; r < 6; r++) {
       for (let c = 0; c < 4; c++) {
@@ -82,6 +83,7 @@ class GameClass {
     }
   }
 
+// diagonal check for right
   checkDiagonalRight(){
     for (let r = 3; r < 6; r++) {
       for (let c = 0; c < 4; c++) {
@@ -97,9 +99,10 @@ class GameClass {
     }
   }
 
+// diagonal left check
   checkDiagonalLeft(){
     for (let r = 3; r < 6; r++) {
-      for (let c = 3; r < 7; c++) {
+      for (let c = 3; c < 7; c++) {
         if (this.board[r][c]){
           if (this.board[r][c] === this.board[r - 1][c - 1] &&
               this.board[r][c] === this.board[r - 2][c - 2] &&
@@ -112,9 +115,29 @@ class GameClass {
     }
   }
 
+  checkDraw(){
+    for(let r = 6; r < 6; r++) {
+      for (let c = 7; c < 7; c++){
+        if(this.board[r][c] === null){
+          return null;
+        }
+      }
+    }
+    return 'draw';
+  }
+
 
   checkAll(){
     return this.checkHorizontal() || this.checkVertical() || this.checkDiagonalRight() || this.checkDiagonalLeft();
+  }
+
+  checkWinner(){
+    if(this.checkAll() !== undefined){
+      return "we have a winner!";
+    }
+    else {
+      return "no winner yet";
+    }
   }
 }
 
@@ -140,4 +163,5 @@ console.log(board.setPiece(3));
 
 console.log("-------------");
 
-console.log(board.checkAll());
+// console.log(board.checkAll());
+console.log(board.checkWinner());
