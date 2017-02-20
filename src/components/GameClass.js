@@ -31,8 +31,15 @@ class GameClass {
         }
       }
     }
-    this.togglePlayer();
-    return this.board;
+    this.checkWinner();
+    if(this.gameOver == false){
+      this.togglePlayer();
+      return this.board;
+    }
+    else {
+      console.log(`Winner is Player ${this.currentPlayer}`);
+      return this.board;
+    }
   }
 
 // change players
@@ -133,10 +140,10 @@ class GameClass {
 
   checkWinner(){
     if(this.checkAll() !== undefined){
-      return "we have a winner!";
+      this.gameOver = true;
     }
     else {
-      return "no winner yet";
+      this.gameOver = false;
     }
   }
 }
@@ -144,18 +151,20 @@ class GameClass {
 
 
 let board = new GameClass();
-console.log(board.setPiece(0));
-console.log(board.setPiece(0));
-console.log(board.setPiece(0));
-console.log(board.setPiece(0));
-console.log(board.setPiece(1));
-console.log(board.setPiece(6));
-console.log(board.setPiece(1));
-console.log(board.setPiece(1));
-console.log(board.setPiece(2));
-console.log(board.setPiece(2));
-console.log(board.setPiece(6));
-console.log(board.setPiece(3));
+board.setPiece(0);
+board.setPiece(0);
+board.setPiece(0);
+board.setPiece(0);
+board.setPiece(1);
+board.setPiece(6);
+board.setPiece(1);
+board.setPiece(1);
+board.setPiece(2);
+board.setPiece(2);
+board.setPiece(6);
+board.setPiece(3);
+
+console.log(board.board)
 
 
 
@@ -164,4 +173,3 @@ console.log(board.setPiece(3));
 console.log("-------------");
 
 // console.log(board.checkAll());
-console.log(board.checkWinner());
