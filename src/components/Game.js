@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-
-class Board extends Component {
+//
+class Game extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -12,11 +12,10 @@ class Board extends Component {
     return(
       <div>
       <h1> oh yeah </h1>
-      <h1> Player homeboy {this.props.player2} </h1>
       </div>
     );
   }
 }
 
 
-export default Board;
+export default Game;

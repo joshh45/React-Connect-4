@@ -149,27 +149,4 @@ class GameClass {
 }
 
 
-
-let board = new GameClass();
-board.setPiece(0);
-board.setPiece(0);
-board.setPiece(0);
-board.setPiece(0);
-board.setPiece(1);
-board.setPiece(6);
-board.setPiece(1);
-board.setPiece(1);
-board.setPiece(2);
-board.setPiece(2);
-board.setPiece(6);
-board.setPiece(3);
-
-console.log(board.board)
-
-
-
-
-
-console.log("-------------");
-
-// console.log(board.checkAll());
+export default GameClass;
