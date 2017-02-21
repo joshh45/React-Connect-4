@@ -14,9 +14,9 @@ class App extends Component {
         <div>
           <h1> Connect 4 </h1>
           <h4> Player {this.props.game.currentPlayer} is moving </h4>
-          <Game
-           game={this.props.game}
-          />
+            <Game
+             game={this.props.game}
+            />
         </div>
       );
     }
