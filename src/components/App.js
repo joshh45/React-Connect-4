@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import Game from './Game';
+import BoardState from './BoardState';
 
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      game: this.props.game
+      game: this.props.game,
+      boardState: null
     };
   }
     render(){
@@ -16,6 +18,7 @@ class App extends Component {
           <h4> Player {this.props.game.currentPlayer} is moving </h4>
             <Game
              game={this.props.game}
+             boardState={this.state.boardState}
             />
         </div>
       );
