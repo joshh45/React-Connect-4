@@ -1,18 +1,17 @@
-// import React, { Component } from 'react';
+import React, { Component } from 'react';
+
+class Space extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
+
+  render() {
+    return (
+      <td> [] </td>
+    );
+  }
+
+}
 //
-//
-// class Space extends Component {
-//   constructor(props) {
-//     super(props);
-//     this.state = {};
-//   }
-//
-//   render() {
-//     return (
-//       <h1> yo </h1>
-//     );
-//   }
-//
-// }
-//
-// export default Space;
+export default Space;

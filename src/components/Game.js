@@ -2,14 +2,30 @@ import React, { Component } from 'react';
 import Space from './Space';
 
 const Game = (props) => {
-  let defaultBoard = [];
-  let board = defaultBoard.push(props.game.board.map((thing, index) => (
-   <p key={index}> [] </p>
- )));
+  let keyCount = -1;
+  let board = props.game.board.map((row, index) => {
+  let columns = row.map(column => {
+    keyCount = keyCount + 1;
+      return(
+        <Space
+          key={keyCount}
+          game={props.game}
+        />
+      );
+    });
+    return (
+      <tr>{columns}</tr>
+    );
+});
+
 
   return (
     <div>
-      {defaultBoard}
+      <table>
+        <tbody>
+        {board}
+        </tbody>
+      </table>
     </div>
   );
 };
