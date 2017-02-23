@@ -11,9 +11,14 @@ class App extends Component {
     };
   }
 
-
+  updateBoard() {
+    this.setState({ game: this.props.game });
+  }
 
     render(){
+
+
+
       return (
         <div>
           <h1> Connect 4 </h1>
@@ -21,6 +26,7 @@ class App extends Component {
             <Game
              game={this.props.game}
              boardState={this.state.boardState}
+             updateBoard={this.updateBoard.bind(this)}
             />
         </div>
       );
