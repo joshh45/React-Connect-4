@@ -10,7 +10,7 @@ class Space extends Component {
   render() {
     let placePiece = () => {
       if(this.props.game.setPiece(this.props.y)) {
-        console.log("hi")
+        this.props.updateBoard();
       }
     };
     return (

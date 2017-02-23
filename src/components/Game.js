@@ -12,6 +12,7 @@ const Game = (props) => {
           game={props.game}
           x={x}
           y={y}
+          updateBoard={props.updateBoard}
         />
       );
     });
