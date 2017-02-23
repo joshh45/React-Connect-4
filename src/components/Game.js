@@ -3,18 +3,20 @@ import Space from './Space';
 
 const Game = (props) => {
   let keyCount = -1;
-  let board = props.game.board.map((row, index) => {
-  let columns = row.map(column => {
+  let board = props.game.board.map((row, x) => {
+  let columns = row.map((column, y) => {
     keyCount = keyCount + 1;
       return(
         <Space
           key={keyCount}
           game={props.game}
+          x={x}
+          y={y}
         />
       );
     });
     return (
-      <tr>{columns}</tr>
+      <tr key={keyCount}>{columns}</tr>
     );
 });
 
