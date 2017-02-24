@@ -14,7 +14,11 @@ class Space extends Component {
       }
     };
     return (
-      <td><div onClick={placePiece}> [{this.props.game.currentPlayer}] </div></td>
+      <td>
+        <div onClick={placePiece}>
+          [{this.props.game.board[this.props.x][this.props.y]}]
+        </div>
+      </td>
     );
   }
 
