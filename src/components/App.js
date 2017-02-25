@@ -24,8 +24,14 @@ class App extends Component {
       return `The winner is player ${this.props.game.currentPlayer}`;
     }
   }
-    render(){
 
+  reset() {
+    window.location.reload(true);
+  }
+
+
+
+    render(){
 
       return (
         <div>
@@ -36,6 +42,9 @@ class App extends Component {
              boardState={this.state.boardState}
              updateBoard={this.updateBoard.bind(this)}
             />
+
+              <div className="button" onClick={this.reset.bind(this)}>New Game</div>
+
         </div>
       );
     }
