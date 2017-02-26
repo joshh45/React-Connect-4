@@ -34,17 +34,20 @@ class App extends Component {
     render(){
 
       return (
+        <div className="row">
+        <div className="small-6 small-centered columns, large-6">
         <div className="Gameboard">
           <h1> Connect 4 </h1>
-          <h4> {this.gameOver()} </h4>
+          <h4 className="small-11 small-centered columns"> {this.gameOver()} </h4>
             <Game
              game={this.props.game}
              boardState={this.state.boardState}
              updateBoard={this.updateBoard.bind(this)}
             />
-
+              <br/>
               <div className="button" onClick={this.reset.bind(this)}>New Game</div>
-
+        </div>
+        </div>
         </div>
       );
     }
