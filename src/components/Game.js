@@ -23,7 +23,7 @@ const Game = (props) => {
 
 
   return (
-    <div>
+    <div className="cell">
       <table>
         <tbody>
         {board}
