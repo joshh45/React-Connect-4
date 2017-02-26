@@ -34,7 +34,7 @@ class App extends Component {
     render(){
 
       return (
-        <div>
+        <div className="Gameboard">
           <h1> Connect 4 </h1>
           <h4> {this.gameOver()} </h4>
             <Game

@@ -13,7 +13,7 @@ class Space extends Component {
         this.props.updateBoard();
       }
     };
-    console.log(this.props.game.gameOver)
+    console.log(this.props.game.gameOver);
     return (
       <td>
         <div onClick={placePiece}>
