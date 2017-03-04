@@ -13,11 +13,23 @@ class Space extends Component {
         this.props.updateBoard();
       }
     };
-    console.log(this.props.game.gameOver);
+
+    let circle;
+      if(this.props.piece == null) {
+        circle= "circle";
+      }
+      else if(this.props.piece == 1) {
+        circle= "red";
+      }
+      else if(this.props.piece == 2) {
+        circle= "blue";
+      }
+
+
     return (
       <td>
-        <div onClick={placePiece}>
-          [{this.props.game.board[this.props.x][this.props.y]}]
+        <div className={circle} onClick={placePiece}>
+          {this.props.game.board[this.props.x][this.props.y]}
         </div>
       </td>
     );
